@@ -1,4 +1,6 @@
+import 'package:filledstacked/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:filledstacked/app/app.bottomsheets.dart';
 import 'package:filledstacked/app/app.dialogs.dart';
@@ -18,11 +20,18 @@ Future<void> main() async {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ResponsiveApp(
+      preferDesktop: true,
       builder: (_) => MaterialApp.router(
+        title: 'Some Academy',
+        theme: Theme.of(context).copyWith(
+            primaryColor: kcBackgroundColor,
+            focusColor: kcPrimaryColor,
+            textTheme: GoogleFonts.openSansTextTheme().apply(
+              bodyColor: Colors.white,
+            )),
         routerDelegate: stackedRouter.delegate(),
         routeInformationParser: stackedRouter.defaultRouteParser(),
       ),

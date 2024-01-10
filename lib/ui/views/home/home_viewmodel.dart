@@ -2,35 +2,18 @@ import 'package:filledstacked/app/app.bottomsheets.dart';
 import 'package:filledstacked/app/app.dialogs.dart';
 import 'package:filledstacked/app/app.locator.dart';
 import 'package:filledstacked/ui/common/app_strings.dart';
+import 'package:filledstacked/ui/views/home/home_view.form.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class HomeViewModel extends BaseViewModel {
+class HomeViewModel extends FormViewModel {
   final _dialogService = locator<DialogService>();
-  final _bottomSheetService = locator<BottomSheetService>();
 
-  String get counterLabel => 'Counter is: $_counter';
-
-  int _counter = 0;
-
-  void incrementCounter() {
-    _counter++;
-    rebuildUi();
-  }
-
-  void showDialog() {
+  void captureEmail() {
     _dialogService.showCustomDialog(
       variant: DialogType.infoAlert,
-      title: 'Stacked Rocks!',
-      description: 'Give stacked $_counter stars on Github',
-    );
-  }
-
-  void showBottomSheet() {
-    _bottomSheetService.showCustomSheet(
-      variant: BottomSheetType.notice,
-      title: ksHomeBottomSheetTitle,
-      description: ksHomeBottomSheetDescription,
+      title: 'Thanks for signing up',
+      description: 'Check in $emailValue for a verification email',
     );
   }
 }
