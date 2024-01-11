@@ -1,3 +1,4 @@
+import 'package:filledstacked/ui/common/app_colors.dart';
 import 'package:filledstacked/ui/common/shared_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -12,12 +13,12 @@ class HomeTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GradientText(
-          'MASTER\nFLUTTER',
+          'TITLE\nTITLE',
           style: ktsTitleText,
-          colors: const [Color(0xff0CFF60), Color(0xff0091FB)],
+          colors: const [kcTitleGradientLeft, kcTitleGradientRight],
         ),
         Text(
-          'ON THE WEB',
+          'SUBTITLE',
           style: ktsTitleText.copyWith(
               fontSize: getValueForScreenType<double>(
             context: context,

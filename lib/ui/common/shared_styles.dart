@@ -14,3 +14,8 @@ TextStyle get ktsBodyRegular => GoogleFonts.openSans(
 TextStyle get ktsBodyLarge => GoogleFonts.openSans(
       fontSize: 20,
     );
+
+TextStyle get ktsBodyLargeBold => GoogleFonts.openSans(
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+    );

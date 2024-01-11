@@ -12,6 +12,7 @@ const Widget horizontalSpaceTiny = SizedBox(width: _tinySize);
 const Widget horizontalSpaceSmall = SizedBox(width: _smallSize);
 const Widget horizontalSpaceMedium = SizedBox(width: _mediumSize);
 const Widget horizontalSpaceLarge = SizedBox(width: _largeSize);
+const Widget horizontalSpaceMassive = SizedBox(width: _massiveSize);
 
 const Widget verticalSpaceTiny = SizedBox(height: _tinySize);
 const Widget verticalSpaceSmall = SizedBox(height: _smallSize);

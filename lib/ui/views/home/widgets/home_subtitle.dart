@@ -1,3 +1,4 @@
+import 'package:filledstacked/ui/common/app_colors.dart';
 import 'package:filledstacked/ui/common/shared_styles.dart';
 import 'package:filledstacked/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +11,28 @@ class HomeSubtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final children = [
+      // Та бидэнд ажлаа даатга
       Text(
         'Build amazing software, the right way.',
-        style: ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
+        style: ktsBodyLarge.copyWith(
+          fontWeight: FontWeight.w600,
+          color: kcDarkGreyColor,
+        ),
       ),
-      verticalSpaceSmall,
+      horizontalSpaceSmall,
+      // Санаа амар орчуулга, уян хатан үнэ ханш
       GradientText(
         'Sign up to be notified',
         style: ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
-        colors: const [Color(0xff0CFF60), Color(0xff0091FB)],
+        colors: const [kcTitleGradientLeft, kcTitleGradientRight],
       )
     ];
 
     return ScreenTypeLayout.builder(
       mobile: (_) => Column(
           crossAxisAlignment: CrossAxisAlignment.start, children: children),
-      desktop: (_) => Row(children: children),
+      desktop: (_) =>
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: children),
     );
   }
 }
