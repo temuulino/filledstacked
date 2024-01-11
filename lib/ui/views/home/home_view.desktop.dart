@@ -4,10 +4,12 @@ import 'package:filledstacked/ui/common/app_constants.dart';
 import 'package:filledstacked/ui/common/ui_helpers.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/academy_icon.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/advertising_card_right.dart';
+import 'package:filledstacked/ui/views/home/widgets/gradient_circle.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_image.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_notify_button.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_subtitle.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_title.dart';
+import 'package:filledstacked/ui/views/home/widgets/text-hero.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stacked/stacked.dart';
@@ -119,6 +121,13 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                   ],
                 ),
               ),
+              verticalSpaceMedium,
+              const SizedBox(
+                width: kdDesktopMaxContentWidth,
+                child: Texthero(),
+              ),
+              verticalSpaceMedium,
+              GradientCircle(),
             ],
           ),
         ),
