@@ -21,6 +21,8 @@ dependencies:
   file_picker: ^6.1.1
   pdf: ^3.10.7
   url_launcher: ^6.2.3
+  card_swiper: ^3.0.1
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   build_runner: ^2.4.5

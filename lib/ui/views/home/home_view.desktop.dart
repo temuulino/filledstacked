@@ -4,11 +4,13 @@ import 'package:filledstacked/ui/common/app_constants.dart';
 import 'package:filledstacked/ui/common/ui_helpers.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/academy_icon.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/advertising_card_right.dart';
+import 'package:filledstacked/ui/views/home/widgets/footer.dart';
 import 'package:filledstacked/ui/views/home/widgets/gradient_circle.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_image.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_notify_button.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_subtitle.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_title.dart';
+import 'package:filledstacked/ui/views/home/widgets/ladder.dart';
 import 'package:filledstacked/ui/views/home/widgets/text-hero.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,7 +34,10 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod';
 
     return Scaffold(
-      appBar: AppBar(title: NavBar()),
+      appBar: AppBar(
+        title: NavBar(),
+        automaticallyImplyLeading: false,
+      ),
       backgroundColor: kcBackgroundColor,
       body: SingleChildScrollView(
         child: Center(
@@ -79,15 +84,15 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     HomeCard(
                         title: loremTitle,
                         description: loremshortDescription,
-                        imagePath: 'assets/hero_real.png'),
+                        imagePath: 'assets/illustrations_1.svg'),
                     HomeCard(
                         title: loremTitle,
                         description: loremshortDescription,
-                        imagePath: 'assets/hero_real.png'),
+                        imagePath: 'assets/illustrations_4.svg'),
                     HomeCard(
                         title: loremTitle,
                         description: loremshortDescription,
-                        imagePath: 'assets/hero_real.png'),
+                        imagePath: 'assets/illustrations_5.svg'),
                   ],
                 ),
               ),
@@ -101,33 +106,34 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                   children: [
                     AdvertisingCardLeft(
                         title: loremTitle,
-                        imagePath: 'assets/master-web-hero-image.png',
+                        imagePath: 'assets/Advertising_1.png',
                         description: loremDescription),
                     verticalSpaceMedium,
                     AdvertisingCardRight(
                         title: loremTitle,
-                        imagePath: 'assets/master-web-hero-image.png',
+                        imagePath: 'assets/Advertising_2.png',
                         description: loremDescription),
                     verticalSpaceMedium,
                     AdvertisingCardLeft(
                         title: loremTitle,
-                        imagePath: 'assets/master-web-hero-image.png',
+                        imagePath: 'assets/Advertising_3.png',
                         description: loremDescription),
                     verticalSpaceMedium,
                     AdvertisingCardRight(
                         title: loremTitle,
-                        imagePath: 'assets/master-web-hero-image.png',
+                        imagePath: 'assets/Advertising_4.png',
                         description: loremDescription),
                   ],
                 ),
               ),
-              verticalSpaceMedium,
-              const SizedBox(
-                width: kdDesktopMaxContentWidth,
-                child: Texthero(),
-              ),
+              verticalSpaceLarge,
+              Ladder(),
               verticalSpaceMedium,
               GradientCircle(),
+              verticalSpaceMedium,
+              Texthero(),
+              verticalSpaceLarge,
+              Footer(),
             ],
           ),
         ),

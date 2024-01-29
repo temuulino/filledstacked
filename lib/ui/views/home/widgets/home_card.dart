@@ -2,6 +2,7 @@ import 'package:filledstacked/ui/common/app_colors.dart';
 import 'package:filledstacked/ui/common/shared_styles.dart';
 import 'package:filledstacked/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeCard extends StatelessWidget {
@@ -19,9 +20,9 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final children = [
-      Image.asset(
+      SvgPicture.asset(
         imagePath,
-        fit: BoxFit.cover,
+        fit: BoxFit.fitWidth,
         height: 220,
       ),
       Padding(

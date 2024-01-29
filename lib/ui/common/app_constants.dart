@@ -1,3 +1,7 @@
+import 'dart:js';
+
+import 'package:flutter/material.dart';
+
 /// The max width the content can ever take up on the screen
 const double kdDesktopMaxContentWidth = 1150;
 

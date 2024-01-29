@@ -3,9 +3,12 @@
 import 'package:filledstacked/ui/common/app_colors.dart';
 import 'package:filledstacked/ui/common/shared_styles.dart';
 import 'package:filledstacked/ui/common/ui_helpers.dart';
+import 'package:filledstacked/ui/views/home/widgets/about_company.dart';
+import 'package:filledstacked/ui/views/home/widgets/about_work.dart';
 import 'package:filledstacked/ui/views/home/widgets/card_mobile.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/academy_icon.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/advertising_card_left.dart';
+import 'package:filledstacked/ui/views/home/widgets/common/advertising_card_right.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/input_field.dart';
 import 'package:filledstacked/ui/views/home/widgets/common/navigation.dart';
 import 'package:filledstacked/ui/views/home/widgets/footer.dart';
@@ -19,15 +22,15 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:filledstacked/ui/views/home/widgets/home_card.dart';
 import 'package:filledstacked/ui/views/home/widgets/text-hero.dart';
+import 'package:filledstacked/ui/views/home/widgets/about_us.dart';
+import 'about_viewmodel.dart';
 
-import 'home_viewmodel.dart';
-
-class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
+class AboutViewMobile extends ViewModelWidget<AboutViewModel> {
   final TextEditingController? controller;
-  const HomeViewMobile({super.key, this.controller});
+  const AboutViewMobile({super.key, this.controller});
 
   @override
-  Widget build(BuildContext context, HomeViewModel viewModel) {
+  Widget build(BuildContext context, AboutViewModel viewModel) {
     return Scaffold(
       appBar: AppBar(
         title: NavBar(),
@@ -46,37 +49,28 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
               child: Expanded(
                 child: ListView(
                   shrinkWrap: true,
-                  children: [
-                    AcademyIcon(),
+                  children: const [
+                    AboutUs(),
+                    // verticalSpaceMedium,
+                    AboutWork(),
                     verticalSpaceLarge,
-                    HomeTitle(),
-                    verticalSpaceTiny,
-                    HomeSubtitle(),
-                    verticalSpaceLarge,
-                    InputField(controller: controller),
-                    verticalSpaceMedium,
-                    HomeNotifyButton(onTap: viewModel.captureEmail),
-                    verticalSpaceMedium,
-                    Ladder(),
-                    GradientCircle(),
-                    HomeCardMobile(
+                    // verticalSpaceLarge,
+                    AdvertisingCardLeft(
                         title: loremTitle,
-                        description: loremshortDescription,
-                        imagePath: 'assets/contract.jpg'),
-                    verticalSpaceMedium,
-                    verticalSpaceMedium,
-                    HomeCardMobile(
+                        imagePath: sampleImagePath,
+                        description: loremshortDescription),
+                    // verticalSpaceMedium,
+                    AdvertisingCardLeft(
                         title: loremTitle,
-                        description: loremshortDescription,
-                        imagePath: 'assets/contract.jpg'),
-                    verticalSpaceMedium,
-                    verticalSpaceMedium,
-                    HomeCardMobile(
+                        imagePath: sampleImagePath,
+                        description: loremshortDescription),
+                    // verticalSpaceMedium,
+                    AdvertisingCardLeft(
                         title: loremTitle,
-                        description: loremshortDescription,
-                        imagePath: 'assets/contract.jpg'),
+                        imagePath: sampleImagePath,
+                        description: loremshortDescription),
                     verticalSpaceMedium,
-                    Texthero(),
+                    AboutCompany(),
                   ],
                 ),
               ),

@@ -9,12 +9,13 @@ class HomeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double kdUnitHeightValue = MediaQuery.of(context).size.height * 0.07;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GradientText(
-          'TITLE\nTITLE',
-          style: ktsTitleText,
+          'Баталгаат\nОрчуулга',
+          style: ktsTitleText.copyWith(fontSize: kdUnitHeightValue),
           colors: const [kcTitleGradientLeft, kcTitleGradientRight],
         ),
         Text(
